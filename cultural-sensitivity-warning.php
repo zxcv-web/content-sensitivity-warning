@@ -26,13 +26,10 @@ function csw_plugin_options() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page. PLease ask an administrator for privilages ' ) );
 	}?>
-	<style>
-	input.csw_primary_text, 	input.csw_secondary_text
-	{
+<?php echo plugins_url();?>/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js
+<link rel="stylesheet" type="text/css"  href="<?php echo plugins_url();?>/cultural-sensitivity-warning/css/main.css" media="all">
+<script type="text/javascript" src="<?php echo plugins_url();?>/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js" ></script>
 
-width: 80%;
-	}
-	</style>
 	<div class="wrap">
 	<h1>Popup Options</h1>
 	<?php $layout = get_option('theme_layout'); ?>
@@ -46,9 +43,19 @@ width: 80%;
 	<h2>Current Settings</h2>
 
 	<b>Style: </b><?php echo get_option('popup_style'); ?><br />
-	<b>Primary Text: </b><?php echo get_option('csw_primary_text'); ?><br />
-	<b>Secondary Text: </b><?php echo get_option('csw_secondary_text'); ?><br />
-	<b>Button Text: </b><?php echo get_option('csw_button_text'); ?><br />
+	<div id="csw-container" class="csw-container">
+	  <div class="csw-wrapper">
+	    <p class="csw-primary-text">
+	      <?php echo get_option('csw_primary_text'); ?>
+	    </p>
+	    <p id="csw-secondary-text" class="csw-secondary-text">
+	      <?php echo get_option('csw_secondary_text'); ?>
+	    </p>
+	    <button id="csw-warning-button" class="csw-warning-button">
+	      <?php echo get_option('csw_button_text'); ?>
+	    </button>
+	  </div>
+	</div>
 
 </div>
 <?php }

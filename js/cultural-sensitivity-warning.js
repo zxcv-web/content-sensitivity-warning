@@ -2,7 +2,7 @@
 
 // All cookie-related functions live within the cookieControl object
 var cookieControl = {
-	function createCookie(name,value,days) {
+	createCookie = function(name,value,days) {
 		if (days) {
 			var date = new Date();
 			date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -12,7 +12,7 @@ var cookieControl = {
 		document.cookie = name+"="+value+expires+"; path=/";
 	},
 
-	function readCookie(name) {
+	readCookie = function(name) {
 		var nameEQ = name + "=";
 		var ca = document.cookie.split(';');
 		for(var i=0;i < ca.length;i++) {
@@ -23,7 +23,7 @@ var cookieControl = {
 		return null;
 	},
 
-	function eraseCookie(name) {
+	eraseCookie = function(name) {
 		createCookie(name,"",-1);
 	}
 }

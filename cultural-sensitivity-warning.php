@@ -26,8 +26,7 @@ function csw_plugin_options() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page. PLease ask an administrator for privilages ' ) );
 	}?>
-<link rel="stylesheet" type="text/css"  href="<?php echo plugins_url();?>/cultural-sensitivity-warning/css/main.css" media="all">
-<script type="text/javascript" src="<?php echo plugins_url();?>/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js" ></script>
+
 
 	<div class="wrap">
 	<h1>Popup Options</h1>
@@ -64,7 +63,7 @@ function choose_style_type()
 	?>
 <select name="popup_style">
   <option value="basic" <?php checked(1, get_option('popup_style'), true); ?>>Basic</option>
-  <option value="bootstap" <?php checked(2, get_option('popup_style'), true); ?>>Bootstrap</option>
+  <option value="bootstrap" <?php checked(2, get_option('popup_style'), true); ?>>Bootstrap</option>
   <option value="none" <?php checked(3, get_option('popup_style'), true); ?> >None</option>
 </select>
 <?php
@@ -107,13 +106,19 @@ function display_theme_panel_fields()
 }
 
 add_action("admin_init", "display_theme_panel_fields");
+
+function wpdocs_theme_name_scripts() {
+    wp_enqueue_style( 'style-name', plugins_url(). "/cultural-sensitivity-warning/css/main.css" );
+    wp_enqueue_script( 'script-name', plugins_url(). "/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js", array(), '1.0.0', false );
+}
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
+
 function hook_header() {
-//echo "<style color: white;>Hello Dave</style>";
-include 'output_header.php';
+include 'output_body.php';
 }
 add_action('wp_head','hook_header');
+
 function hook_footer() {
-//echo "<style color: white;>Hello Dave</style>";
 include 'output_footer.php';
 }
 add_action('wp_footer','hook_footer');

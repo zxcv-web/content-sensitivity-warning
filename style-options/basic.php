@@ -1,5 +1,4 @@
 <!-- basic -->
-
 <div id="csw-container" class="csw-container">
   <div class="csw-wrapper">
     <p class="csw-primary-text">

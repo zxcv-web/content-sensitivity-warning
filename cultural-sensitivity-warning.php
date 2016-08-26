@@ -109,11 +109,11 @@ function display_theme_panel_fields()
 add_action("admin_init", "display_theme_panel_fields");
 function hook_header() {
 //echo "<style color: white;>Hello Dave</style>";
-include 'output-header.php';
+include 'output_header.php';
 }
 add_action('wp_head','hook_header');
 function hook_footer() {
 //echo "<style color: white;>Hello Dave</style>";
-include 'output-footer.php';
+include 'output_footer.php';
 }
 add_action('wp_footer','hook_footer');

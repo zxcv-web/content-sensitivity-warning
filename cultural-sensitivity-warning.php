@@ -26,7 +26,6 @@ function csw_plugin_options() {
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page. PLease ask an administrator for privilages ' ) );
 	}?>
-<?php echo plugins_url();?>/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js
 <link rel="stylesheet" type="text/css"  href="<?php echo plugins_url();?>/cultural-sensitivity-warning/css/main.css" media="all">
 <script type="text/javascript" src="<?php echo plugins_url();?>/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js" ></script>
 

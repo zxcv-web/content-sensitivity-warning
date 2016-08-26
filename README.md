@@ -1,6 +1,5 @@
 # Cultural Sensitivity Warning
-![Badge](https://img.shields.io/badge/Wordpress%20Plugin-Not%20Ready-yellow.svg "Not Ready")
-
+![Badge](https://img.shields.io/badge/Wordpress%20Plugin-Not%20Ready-yellow.svg "In development")
 
 A Wordpress plugin aimed at warning visitors of culturally sensitive material
 

@@ -24,7 +24,7 @@ var cookieControl = {
 	},
 
 	eraseCookie : function(name) {
-		createCookie(name,"",-1);
+		cookieControl.createCookie(name,"",-1);
 	}
 }
 

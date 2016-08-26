@@ -45,6 +45,6 @@ var cookieControl = {
 		button.onclick = function() {
 			cookieControl.createCookie('warned', 'yes', 7);
 			csw.style.display = 'none';
-		});
+		};
 	}
 })();

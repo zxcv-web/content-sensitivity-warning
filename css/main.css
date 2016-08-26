@@ -4,6 +4,7 @@
 
 .csw-container {
   background-color: red;
+  display: none;
   height: auto;
   overflow-y: hidden;
   width: 100%;

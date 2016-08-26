@@ -29,22 +29,22 @@ var cookieControl = {
 }
 
 // iife to run function immediately without creating global variables.
-(function(){
-	var warned = cookieControl.readCookie('warned');
-	var sText = document.getElementById("csw-secondary-text");
-	var button = document.getElementById("csw-warning-button");
-	var csw = document.getElementById("csw-container");
+document.addEventListener("DOMContentLoaded", function(event) {
+		var warned = cookieControl.readCookie('warned');
+		var sText = document.getElementById("csw-secondary-text");
+		var button = document.getElementById("csw-warning-button");
+		var csw = document.getElementById("csw-container");
 
-	sText.style.display = 'block';
-	button.style.display = 'block';
-	csw.className = 'csw-container-js';
+		sText.style.display = 'block';
+		button.style.display = 'block';
+		csw.className = 'csw-container-js';
 
-	if (warned === 'yes') {
-		csw.style.display = 'none';
-	} else {
-		button.onclick = function() {
-			cookieControl.createCookie('warned', 'yes', 7);
+		if (warned === 'yes') {
 			csw.style.display = 'none';
-		};
-	}
-})();
+		} else {
+			button.onclick = function() {
+				cookieControl.createCookie('warned', 'yes', 7);
+				csw.style.display = 'none';
+			};
+		}
+});

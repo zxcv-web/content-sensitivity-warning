@@ -1,5 +1,7 @@
 // Cultural Sensitivity Warning
 
+// Note: the cookie is controlled by both JS and PHP to allow for a Js being disabled.
+
 // All cookie-related functions live within the cookieControl object
 var cookieControl = {
 	createCookie : function(name,value,days) {
@@ -33,16 +35,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var csw = cookieControl.readCookie('csw');
 		var sText = document.getElementById("csw-secondary-text");
 		var button = document.getElementById("csw-warning-button");
+		var link = document.getElementById("csw-warning-link");
 		var cswCont = document.getElementById("csw-container");
+		var style = document.getElementById("csw-container").getAttribute("data-style");
+		var wrapper = document.getElementsByClassName("csw-wrapper");
 
 		setTimeout(function(){
+			// if ja is enabled, show secondary text and button, hide link and change css class
 			sText.style.display = 'block';
 			button.style.display = 'block';
+			link.style.display = 'none';
 			cswCont.className = 'csw-container-js';
-		}, 3000);
+			// if style is bootstrap and js is enabled, add bs modal-content class
+			if (style === "bootstrap"){
+				wrapper[0].className += ' modal-content';
+			} else {};
+		}, 1000);
 
+		// if cookie is present hide csw. Php should take care of this before page load
 		if (csw === 'yes') {
 			cswCont.style.display = 'none';
+		// button click event to write cookie with js
 		} else {
 			button.onclick = function() {
 				cookieControl.createCookie('csw', 'yes', 7);

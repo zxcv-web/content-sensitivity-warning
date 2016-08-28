@@ -1,0 +1,18 @@
+/* Cultural Sensitivity Warning
+   Theme CSS
+*/
+
+.csw-container {
+  background-color: red;
+}
+
+.csw-wrapper {
+  color: white;
+}
+
+.csw-secondary-text {
+}
+
+.csw-container-js .csw-wrapper {
+  background-color: red;
+}

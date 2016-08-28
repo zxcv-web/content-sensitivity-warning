@@ -2,17 +2,72 @@
    Theme CSS
 */
 
+/* no js fallback styling */
+
 .csw-container {
-  background-color: red;
+  background-color: #ec4f15;
 }
 
-.csw-wrapper {
+.csw-container p {
   color: white;
+  font-size: 12px;
 }
 
-.csw-secondary-text {
+.csw-primary-text a {
+  color: black;
 }
+
+.csw-primary-text a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* js styling */
 
 .csw-container-js .csw-wrapper {
-  background-color: red;
+  border: 1px solid #ec4f15;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.7);
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.7);
+}
+
+.csw-container-js .csw-primary-text,
+.csw-container-js a {
+  color: #ec4f15;
+}
+
+.csw-container-js a:hover {
+  color: cadetblue;
+  text-decoration: underline;
+}
+
+.csw-container-js .csw-secondary-text {
+  color: darkslategray;
+}
+
+.csw-warning-button {
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  background-color: #98cbcd;
+  border: 1px solid dimgray;
+  border-radius: 4px;
+}
+
+.csw-warning-button:hover {
+  background-color: cadetblue;
 }

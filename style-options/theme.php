@@ -3,7 +3,7 @@
   <div class="csw-wrapper">
     <p class="csw-primary-text">
       <?php echo get_option('csw_primary_text'); ?>
-      <a id="csw-warning-link" href="<?php echo $_SERVER['PHP_SELF'] . "?csw=yes"; ?>">
+      <a id="csw-warning-link" class="csw-warning-link" href="<?php echo $_SERVER['PHP_SELF'] . "?csw=yes"; ?>">
         <?php echo get_option('csw_button_text'); ?>
       </a>
     </p>

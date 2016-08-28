@@ -10,5 +10,8 @@
     <button id="csw-warning-button" class="csw-warning-button">
       <?php echo get_option('csw_button_text'); ?>
     </button>
+    <a type="submit" href="<?php echo $_SERVER['PHP_SELF'] . "?csw=yes"; ?>">
+      <?php echo get_option('csw_button_text'); ?>
+    </a>
   </div>
 </div>

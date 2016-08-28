@@ -105,16 +105,42 @@ function display_theme_panel_fields()
 	register_setting("section", "csw_button_text");
 }
 
+
+
 add_action("admin_init", "display_theme_panel_fields");
 
 function wpdocs_theme_name_scripts() {
     wp_enqueue_style( 'style-name', plugins_url(). "/cultural-sensitivity-warning/css/main.css" );
     wp_enqueue_script( 'script-name', plugins_url(). "/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js", array(), '1.0.0', false );
 }
+
+function set_new_cookie() {
+		if(isset($_GET['csw'])) {
+			setcookie('csw', yes, time() + 604800, '/');
+		} else {}
+}
+
+add_action( 'init', 'set_new_cookie' );
+
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
 function hook_header() {
-include 'output_body.php';
+
+?>
+<?php
+	if(!isset($_COOKIE['csw'])) {
+	  // echo "The cookie: '" . 'csw' . "' is not set.";
+		include 'output_body.php';
+	} else {
+	  // echo "The cookie '" . 'csw' . "' is set.";
+	  // echo "Cookie is:  " . $_COOKIE['csw'];
+	}
+?>
+
+
+
+<?php
+
 }
 add_action('wp_head','hook_header');
 
@@ -122,3 +148,6 @@ function hook_footer() {
 include 'output_footer.php';
 }
 add_action('wp_footer','hook_footer');
+
+
+/* */

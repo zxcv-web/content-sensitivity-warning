@@ -1,18 +1,5 @@
 /* Cultural Sensitivity Warning */
 
-@-moz-keyframes dropIn {
-    0% { -moz-transform: translateY(-40px); }
-    100% { -moz-transform: translateY(0); }
-}
-@-webkit-keyframes dropIn {
-    0% { -webkit-transform: translateY(-40px); }
-    100% { -webkit-transform: translateY(0); }
-}
-@keyframes dropIn {
-    0% { transform: translateY(-40px); }
-    100% { transform: translateY(0); }
-}
-
 /* no js fallback styling */
 
 .csw-container {
@@ -20,33 +7,19 @@
   height: auto;
   overflow-y: hidden;
   width: 100%;
-
-  -moz-animation-name: dropIn;
-  -moz-animation-iteration-count: 1;
-  -moz-animation-timing-function: ease-in;
-  -moz-animation-duration: 2s;
-
-  -webkit-animation-name: dropIn;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease-in;
-  -webkit-animation-duration: 2s;
-
-  animation-name: dropIn;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
 }
 
 .csw-wrapper {
   color: white;
   margin: 0 auto;
-  padding: 1em 0.5em 0.2em;
+  padding: 4px;
   max-width: 1400px;
 }
 
 .csw-wrapper p {
   text-align: center;
   max-width: none;
+  margin-bottom: 0;
 }
 
 .csw-wrapper a {
@@ -79,6 +52,7 @@
 }
 
 .csw-container-js .csw-wrapper {
+  background-color: red;
   max-width: 35em;
   padding: 2em;
   position: relative;
@@ -93,4 +67,5 @@
 
 .csw-container-js .csw-wrapper p {
     text-align: left;
+    margin-bottom: 1em;
 }

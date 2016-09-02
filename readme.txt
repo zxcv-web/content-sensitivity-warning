@@ -19,7 +19,7 @@ Fore more information on cultural protocols relating to deaths in Indigenous com
 This lightweight plugin is aimed to be a simple way of meeting requirements for sensitive content. Javascript is not required to be on for the end user.
 
 == Installation ==
-Download from github here:
+Download from wordpress.org or from github:
 
 https://github.com/zxcv-web/cultural-sensitivity-warning/
 

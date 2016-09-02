@@ -1,8 +1,0 @@
-To Do
-
-** Make style select in back end default to current setting
-** Discuss offering standard messages?
-** Test Bootstrap version
-** Test browser compatibility
-** Discuss name change to content sensitivity warning?
-** Prefix animation css

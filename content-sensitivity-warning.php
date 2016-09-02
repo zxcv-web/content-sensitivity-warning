@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Cultural Sensitivity Warning
-Plugin URI:  https://github.com/zxcv-web/cultural-sensitivity-warning
-Description: A Wordpress plugin aimed at warning visitors of culturally sensitive material contribute on github
+Plugin Name: Content Sensitivity Warning
+Plugin URI:  https://github.com/zxcv-web/content-sensitivity-warning
+Description: A Wordpress plugin aimed at warning visitors of sensitive material contribute on github
 Version:     0.0.1
 Author:      Jack Dunstan and Luke Powell
 Author URI:		http://zxcv.net.au
@@ -14,7 +14,7 @@ Text Domain:
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 function csw_plugin_menu() {
-	add_options_page( 'Plugin Options', 'Cultural Sensitivity', 'manage_options', 'my-unique-identifier', 'csw_plugin_options' );
+	add_options_page( 'Plugin Options', 'Content Sensitivity', 'manage_options', 'my-unique-identifier', 'csw_plugin_options' );
 }
 
 add_action( 'admin_menu', 'csw_plugin_menu' );
@@ -34,21 +34,6 @@ function csw_plugin_options() {
         submit_button();
       ?>
     </form>
-		<h2>Current Settings</h2>
-			<b>Style: </b><?php echo get_option('popup_style'); ?><br />
-			<div id="csw-container" class="csw-container">
-	  		<div class="csw-wrapper">
-	    		<p class="csw-primary-text">
-	      		<?php echo get_option('csw_primary_text'); ?>
-	    		</p>
-	    		<p id="csw-secondary-text" class="csw-secondary-text">
-	      		<?php echo get_option('csw_secondary_text'); ?>
-	    		</p>
-	    		<button id="csw-warning-button" class="csw-warning-button">
-	      		<?php echo get_option('csw_button_text'); ?>
-	    		</button>
-	  		</div>
-			</div>
 	</div>
 <?php
 }
@@ -56,9 +41,9 @@ function csw_plugin_options() {
 function choose_style_type() {
 	?>
 	<select name="popup_style">
-	  <option value="theme" <?php checked(1, get_option('popup_style'), true); ?>>Theme</option>
-	  <option value="bootstrap" <?php checked(2, get_option('popup_style'), true); ?>>Bootstrap</option>
-	  <option value="none" <?php checked(3, get_option('popup_style'), true); ?> >None</option>
+	  <option value="theme" <?php if ( get_option('popup_style') == 'theme' ) echo 'selected="selected"'; ?>>Theme</option>
+	  <option value="bootstrap" <?php if ( get_option('popup_style') == 'bootstrap' ) echo 'selected="selected"'; ?>>Bootstrap</option>
+	  <option value="none" <?php if ( get_option('popup_style') == 'none' ) echo 'selected="selected"'; ?>>None</option>
 	</select>
 <?php
 }
@@ -124,10 +109,10 @@ function display_theme_panel_fields() {
 add_action("admin_init", "display_theme_panel_fields");
 
 function wpdocs_theme_name_scripts() {
-    wp_enqueue_style( 'style-name', plugins_url(). "/cultural-sensitivity-warning/css/main.css" );
-    wp_enqueue_script( 'script-name', plugins_url(). "/cultural-sensitivity-warning/js/cultural-sensitivity-warning.js", array(), '1.0.0', false );
+    wp_enqueue_style( 'style-name', plugins_url(). "/content-sensitivity-warning/css/main.css" );
+    wp_enqueue_script( 'script-name', plugins_url(). "/content-sensitivity-warning/js/content-sensitivity-warning.js", array(), '1.0.0', false );
 		if ('theme' == get_option('popup_style')) {
-			wp_enqueue_style( 'csw-theme', plugins_url(). "/cultural-sensitivity-warning/css/theme.css" );
+			wp_enqueue_style( 'csw-theme', plugins_url(). "/content-sensitivity-warning/css/theme.css" );
 		};
 }
 

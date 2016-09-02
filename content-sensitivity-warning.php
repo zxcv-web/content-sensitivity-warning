@@ -25,7 +25,7 @@ function csw_plugin_options() {
 	}?>
 
 	<div class="wrap">
-		<h1>Popup Options</h1>
+		<h1>Content Sensitivity Warning Options</h1>
 		<?php $layout = get_option('theme_layout'); ?>
 		<form method="post" action="options.php">
       <?php

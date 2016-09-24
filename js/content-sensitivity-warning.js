@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		setTimeout(function(){
 			// if ja is enabled, show secondary text and button, hide link and change css class
 			sText.style.display = 'block';
-			button.style.display = 'block';
+			button.style = 'display:block !important';
 			link.style.display = 'none';
 			cswCont.className = 'csw-container-js';
 			// if style is bootstrap and js is enabled, add bs modal-content class

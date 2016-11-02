@@ -104,7 +104,7 @@
 }
 
 .csw-warning-button {
-  display: none;
+  display: none !important;
   position: absolute;
   bottom: 30px;
   right: 30px;

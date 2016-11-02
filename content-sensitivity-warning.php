@@ -3,7 +3,7 @@
 Plugin Name: Content Sensitivity Warning
 Plugin URI:  https://github.com/zxcv-web/content-sensitivity-warning
 Description: A Wordpress plugin aimed at warning visitors of sensitive material contribute on github
-Version:     0.0.1
+Version:     1.0.0
 Author:      Jack Dunstan and Luke Powell
 Author URI:		http://zxcv.net.au
 License:     GPL2
@@ -38,7 +38,7 @@ function csw_plugin_options() {
 <?php
 }
 
-function choose_style_type() {
+function csw_choose_style_type() {
 	?>
 	<select name="popup_style">
 	  <option value="theme" <?php if ( get_option('popup_style') == 'theme' ) echo 'selected="selected"'; ?>>Theme</option>
@@ -65,7 +65,7 @@ function csw_button_text_function() {
 	<?php
 }
 
-function display_theme_panel_fields() {
+function csw_display_theme_panel_fields() {
 	add_settings_section(
 			"section",
 			"All Settings",
@@ -75,7 +75,7 @@ function display_theme_panel_fields() {
 	add_settings_field(
 			"popup_style",
 			"Select popup style",
-			"choose_style_type",
+			"csw_choose_style_type",
 			"post_type_options",
 			"section"
 	);
@@ -106,9 +106,9 @@ function display_theme_panel_fields() {
 	register_setting("section", "csw_button_text");
 }
 
-add_action("admin_init", "display_theme_panel_fields");
+add_action("admin_init", "csw_display_theme_panel_fields");
 
-function wpdocs_theme_name_scripts() {
+function csw_wpdocs_theme_name_scripts() {
     wp_enqueue_style( 'style-name', plugins_url(). "/content-sensitivity-warning/css/main.css" );
     wp_enqueue_script( 'script-name', plugins_url(). "/content-sensitivity-warning/js/content-sensitivity-warning.js", array(), '1.0.0', false );
 		if ('theme' == get_option('popup_style')) {
@@ -116,28 +116,22 @@ function wpdocs_theme_name_scripts() {
 		};
 }
 
-add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
+add_action( 'wp_enqueue_scripts', 'csw_wpdocs_theme_name_scripts' );
 
-function set_new_cookie() {
+function csw_set_new_cookie() {
 		if(isset($_GET['csw'])) {
 			setcookie('csw', yes, time() + 604800, '/');
 		} else {}
 }
 
-add_action( 'init', 'set_new_cookie' );
+add_action( 'init', 'csw_set_new_cookie' );
 
-function hook_header() {
+function csw_hook_header() {
 	if(!isset($_COOKIE['csw'])) {
 		include 'output_body.php';
 	} else {}
 }
 
-add_action('wp_head','hook_header');
-
-function hook_footer() {
-	include 'output_footer.php';
-}
-
-add_action('wp_footer','hook_footer');
+add_action('wp_footer');
 
 /* */

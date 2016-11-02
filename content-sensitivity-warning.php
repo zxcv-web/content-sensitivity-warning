@@ -3,7 +3,7 @@
 Plugin Name: Content Sensitivity Warning
 Plugin URI:  https://github.com/zxcv-web/content-sensitivity-warning
 Description: A Wordpress plugin aimed at warning visitors of sensitive material - Contribute on github
-Version:     0.9.4
+Version:     0.9.5
 Author:      Jack Dunstan and Luke Powell
 Author URI:		http://zxcv.net.au
 License:     GPL2

@@ -23,9 +23,7 @@ function csw_plugin_options() {
 	if ( !current_user_can( 'manage_options' ) ) {
 		wp_die( __( 'You do not have sufficient permissions to access this page. Please ask an administrator for privilages ' ) );
 	}?>
-	<?php
-	echo  plugins_url( '', __FILE__ ) ;
-	?>
+
 	<div class="wrap">
 		<h1>Content Sensitivity Warning Options</h1>
 		<?php $layout = get_option('theme_layout'); ?>

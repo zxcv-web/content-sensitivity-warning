@@ -131,13 +131,8 @@ function hook_header() {
 		include 'output_body.php';
 	} else {}
 }
-
 add_action('wp_head','hook_header');
 
-function hook_footer() {
-	include 'output_footer.php';
-}
 
-add_action('wp_footer','hook_footer');
 
 /* */

@@ -23,7 +23,9 @@ function csw_plugin_options() {
 	if ( !current_user_can( 'manage_options' ) ) {
 		wp_die( __( 'You do not have sufficient permissions to access this page. Please ask an administrator for privilages ' ) );
 	}?>
-
+	<?php
+	echo  plugins_url( '', __FILE__ ) ;
+	?>
 	<div class="wrap">
 		<h1>Content Sensitivity Warning Options</h1>
 		<?php $layout = get_option('theme_layout'); ?>
@@ -109,10 +111,10 @@ function csw_display_theme_panel_fields() {
 add_action("admin_init", "csw_display_theme_panel_fields");
 
 function csw_scripts() {
-    wp_enqueue_style( 'style-name', plugins_url(). "/content-sensitivity-warning/css/main.css" );
-    wp_enqueue_script( 'script-name', plugins_url(). "/content-sensitivity-warning/js/content-sensitivity-warning.js", array(), '1.0.0', false );
+    wp_enqueue_style( 'style-name', plugins_url( '', __FILE__ ). "/css/main.css" );
+    wp_enqueue_script( 'script-name', plugins_url( '', __FILE__ ). "/js/content-sensitivity-warning.js", array(), '1.0.0', false );
 		if ('theme' == get_option('popup_style')) {
-			wp_enqueue_style( 'csw-theme', plugins_url(). "/content-sensitivity-warning/css/theme.css" );
+			wp_enqueue_style( 'csw-theme', plugins_url( '', __FILE__ ). "/css/theme.css" );
 		};
 }
 

@@ -1,5 +1,5 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
-<div id="csw-container" class="csw-container">
+<div id="csw-container" class="csw-container" data-style="theme">
   <div class="csw-wrapper">
     <p class="csw-primary-text">
       <?php echo get_option('csw_primary_text'); ?>

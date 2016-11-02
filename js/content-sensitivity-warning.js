@@ -2,8 +2,8 @@
 
 // Note: the cookie is controlled by both JS and PHP to allow for a Js being disabled.
 
-// All cookie-related functions live within the cookieControl object
-var cookieControl = {
+// All cookie-related functions live within the CSWcookieControl object
+var CSWcookieControl = {
 	createCookie : function(name,value,days) {
 		if (days) {
 			var date = new Date();
@@ -26,13 +26,13 @@ var cookieControl = {
 	},
 
 	eraseCookie : function(name) {
-		cookieControl.createCookie(name,"",-1);
+		CSWcookieControl.createCookie(name,"",-1);
 	}
 }
 
 // iife to run function immediately without creating global variables.
 document.addEventListener("DOMContentLoaded", function(event) {
-		var csw = cookieControl.readCookie('csw');
+		var csw = CSWcookieControl.readCookie('csw');
 		var sText = document.getElementById("csw-secondary-text");
 		var button = document.getElementById("csw-warning-button");
 		var link = document.getElementById("csw-warning-link");
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		// button click event to write cookie with js
 		} else {
 			button.onclick = function() {
-				cookieControl.createCookie('csw', 'yes', 7);
+				CSWcookieControl.createCookie('csw', 'yes', 7);
 				cswCont.style.display = 'none';
 			};
 		}

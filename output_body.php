@@ -1,7 +1,7 @@
 <?php
-if ('theme' == get_option('popup_style')) {
+if ('theme' == get_option('csw_popup_style')) {
     include('style-options/theme.php');
-} elseif('bootstrap' == get_option('popup_style')) {
+} elseif('bootstrap' == get_option('csw_popup_style')) {
     include('style-options/bootstrap.php');
 } else {
     include('style-options/none.php');

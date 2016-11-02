@@ -1,4 +1,4 @@
-<!-- theme -->
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div id="csw-container" class="csw-container">
   <div class="csw-wrapper">
     <p class="csw-primary-text">

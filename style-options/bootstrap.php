@@ -1,4 +1,4 @@
-<!-- bootstrap -->
+<?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <div id="csw-container" class="csw-container" data-style="bootstrap">
   <div class="csw-wrapper">
     <p class="csw-primary-text text-danger">

@@ -126,12 +126,12 @@ function csw_set_new_cookie() {
 
 add_action( 'init', 'csw_set_new_cookie' );
 
-function hook_header() {
+function csw_hook_header() {
 	if(!isset($_COOKIE['csw'])) {
 		include 'output_body.php';
 	} else {}
 }
-add_action('wp_head','hook_header');
+add_action('wp_head','csw_hook_header');
 
 
 

@@ -132,6 +132,5 @@ function csw_hook_header() {
 	} else {}
 }
 
-add_action('wp_footer');
 
 /* */
